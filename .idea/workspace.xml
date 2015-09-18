@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4544880-bb45-40db-8d4c-3bf8139a27c1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PDF/Webanwendungen_Einfuehrung.pdf" afterPath="$PROJECT_DIR$/PDF/Webanwendungen_Einfuehrung.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Vorbemerkungen.html" afterPath="$PROJECT_DIR$/Vorbemerkungen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="waw.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +28,7 @@
         <entry file="file://$PROJECT_DIR$/Vorbemerkungen.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.54362416">
-              <caret line="227" column="79" selection-start-line="227" selection-start-column="79" selection-end-line="227" selection-end-column="79" />
+              <caret line="80" column="32" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
               <folding>
                 <element signature="n#style#0;n#strong#0;n#li#0;n#ul#0;n#section#4;n#section#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#strong#0;n#li#1;n#ul#0;n#section#4;n#section#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -215,7 +215,7 @@
     <entry file="file://$PROJECT_DIR$/Vorbemerkungen.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54362416">
-          <caret line="227" column="79" selection-start-line="227" selection-start-column="79" selection-end-line="227" selection-end-column="79" />
+          <caret line="80" column="32" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#strong#0;n#li#0;n#ul#0;n#section#4;n#section#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#strong#0;n#li#1;n#ul#0;n#section#4;n#section#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

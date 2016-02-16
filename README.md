@@ -26,7 +26,7 @@ Improvement Emojis:
 
 ## Get in Touch
 
-Need help or just want to think out loud? The are several ways to get in touch with our robots.
+Need help or just want to think out loud? The are several ways to get in touch with us.
 We look forward to hearing from you!
 
 * Email Martina Kraus:   m.kraus@hs-mannheim.de

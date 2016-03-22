@@ -1,6 +1,26 @@
-# Webanwendungen
+# Webanwendungen SS16
 
-Slides for WAW IB und UIB SS13
+Folien der Vorlesung 
+
+# Organisation
+
+Alle organisatorischen Aufgaben, Probleme und Fragen finden
+in dem Repository [https://github.com/WAWSS16/Organization](https://github.com/WAWSS16/Organization)
+statt.
+
+# FAQ
+
+## Entwicklungsumgebungen / Editoren
+
+- [Atom](https://atom.io)
+- [Sublime Text](https://sublimetext.com)
+- [VIM](http://www.vim.org)
+- [Visual Studio Code](https://code.visualstudio.com)
+
+## Folien als PDF
+
+Nutze einen Browser deiner Wahl (Chrome, Firefox, Whatever),
+Datei > Drucken > Speichern als PDF.
 
 ## Git Commit Messages
 
@@ -26,9 +46,6 @@ Improvement Emojis:
 
 ## Get in Touch
 
-Need help or just want to think out loud? The are several ways to get in touch with us.
-We look forward to hearing from you!
-
 * Email Martina Kraus:   m.kraus@hs-mannheim.de
-* Email Christoph Martens:   c.martens@hs-mannheim.de
+
 

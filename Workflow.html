@@ -40,29 +40,70 @@
 
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
-        <section>
-            <h1>Einführung in die Webentwicklung</h1>
-            <h3>Martina Kraus</h3>
-            <p>
-                <small>Created by <a href="http://hakim.se">Martina Kraus</a> / <a href="http://twitter.com/wing121">@wing121</a></small>
-            </p>
-        </section>
-        <section>
-            <h3>Inhalt</h3>
-            <ul>
-                <li>Telemask</li>
-                <li>Kommunikation Atlantikmission</li>
-                <li>Telefon / Rundfunk</li>
-                <li>4 privaten militärunis Email - Internetanfänge -  - HTTP</li>
-                <li>Hyperlinks - statisch</li>
-                <li>dynmaische Interaktion (JavaScript) - AJAX</li>
-                <li>Realtime - SPA</li>
-                <li>Next steps: cross platform</li>
-            </ul>
-        </section>
+    <section>
+        <h1>Workflow</h1>
+    </section>
 
+    <section>
+        <h2>Inhalt</h2>
+        <ul>
+            <li>Triangular Workflow</li>
+            <li>Work with GitHub</li>
+            <li>Organization</li>
+        </ul>
+    </section>
+    <section>
+    <section>
+        <h1>Triangular Workflow</h1>
+    </section>
+     <section>
+        <h2>Fork Management</h2>
+        <ul>
+            <li>vollst&auml;ndige Kopie eines Repos (upstream)</li>
+            <li>Eigene Weiterentwicklungen / Bugfixings</li>
+            <li>Taucht als eigenes Repo unter deinem Account auf</li>
+            <img width="960px" height="96px" src="assets/contribution-fork.png">
+        </ul>
+    </section>
+     <section>
+            <h2>Beispiel</h2>
+            <pre class="bash"><code>$ git clone http://github.com/YOUR-ACCOUNTNAME/lycheeJS
+            </code></pre>
+                    <ul>
+            <li>Geforktes Repo dann als lokale Kopie auf dem Arbeitsrechner clonen</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Don't get out of sync</h2>
+        <ul>
+            <li>Das geforkte Repo muss nat&uuml;rlich auch up-to-date sein</li>
+            <li>Regelm&auml;&szlig;iges pullen des originalen Repos (upstream):</li>
+        </ul>
+        <pre class="bash"><code>$ git pull https://github.com/Artificial-Engineering/lycheeJS.git
+            </code></pre>
+    </section>
+    <section>
+        <h2>!!! Pushen nicht vergessen !!!</h2>
+        <ul>
+            <li>Die Updates sind bisher nur in deiner lokalen Kopie auf dem Rechner</li>
+            <li>Pushen, um die &Auml;nderungen auch in deinem Github Fork zu haben</li>
+        </ul>
+        <pre class="bash"><code>$ git push
+            </code></pre>
+    </section>
+    <section>
+        <h2>Pull Request</h2>
+        <ul>
+            <li>Nach der Arbeit stellt man einen Pull Request an das originale Repo</li>
+            <li>Fork Maintainer initiiert Pull Request</li>
+            <li>Maintainer des originalen Repos (upstream) entscheidet ob er deine &Auml;nderungen annimmt und merged</li>
+        </ul>
+        <img width="960px" height="96px" src="assets/contribution-pullrequest.png">
+    </section>
         <section>
-            <h1>Fragen?</h1>
+        <h2>Triangular git Workflow</h2>
+        <img width="960px" height="96px" src="assets/contribution-workflowt.png">
+    </section>
         </section>
     </div>
 

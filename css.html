@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Webanwendungen - Martina Kraus</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Martina Kraus">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+    <section>
+        <h1>CSS</h1>
+    </section>
+
+    <section>
+        <h2>Inhalt</h2>
+        <ul>
+            <li>CSS Grundlagen</li>
+            <li>CSS-Selektoren</li>
+            <li>CSS-Layout</li>
+            <li>CSS-Attribute</li>
+        </ul>
+    </section>
+    <section>
+        <section>
+            <h1>CSS Grundlagen</h1>
+        </section>
+         <section>
+            <h2>Herausforderungen</h2>
+            <span>HTML zeichnet Text logisch aus</span>
+            <ul>
+                <li>Fließtext mit dynamischem Umbruch</li>
+                <li>keine feste Platzierung von Elementen</li>
+                <li>Darstellung folgt der Reihenfolge der Tags in der HTML-Datei</li>
+                <li>keine Überdeckung von Objekten</li>
+                <li>Browser stellt Inhalt passend für das Gerät des Benutzers dar</li>
+            </ul>
+            <span>Ziel: Layout muss sich dynamisch an die Nutzung (PC, Tablet, Smartphone) anpassen können</span>
+        </section>
+         <section>
+            <h2>Cascading Style Sheets</h2>
+            <ul>
+                <li>Definiert physische Formatierung von HTML-Seiten</li>
+                <li>Formatierung kann definiert werden für</li>
+                <li>vorhandene logische Formatierungen (Überschriften, Listen, …)</li>
+                <li>eigene Formatklassen</li>
+                <li>einzelne Textblöcke</li>
+                <li>unterschiedliche Formate für Druck, Bildschirm, …</li>
+                <li>CSS Version: 3.0 2012 (Draft)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Cascading Style Sheets</h2>
+            <ul>
+                <li>Vielseitige Gestaltung der physischen Darstellung</li>
+                <li>Schriftart, Schriftgröße, Schriftstil</li>
+                <li>Zeichen- und Zeilenabstand, Einrückung</li>
+                <li>Text- und Hintergrundfarbe</li>
+                <li>Rahmen</li>
+                <li>Farben</li>
+                <li>freie Platzierung und Überlappung von Objekten</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Vorbereitung für CSS-Formatierung</h2>
+            <h5>HTML-Seite als logische Sequenz von Blöcken</h5>
+            <ul>
+                <li>jeder Block wird mit einem Tag gekennzeichnet <b>(&lt;section&gt;)</b></li>
+                <li>Reihenfolge entspricht der logischen Reihenfolge</li>
+                <li>Blöcke werden dann mit CSS formatiert, positioniert und ausgerichtet</li>
+                <li>Text- und Hintergrundfarbe</li>
+            </ul>
+        </section>
+         <section>
+            <h2>Einbinden von CSS: Eigene Datei</h2>
+            <ul>
+                <li>Normalfall in vielen Web-Projekten</li>
+                <li>Unterstützt Wiederverwendung (kann von mehreren HTML-Dateien genutzt werden)</li>
+                <li>Trennung von Inhalt und Darstellung</li>
+                <li>Einbinden über &lt;link&gt;-Element im Header der Datei</li>
+            </ul>
+            <pre class="bash"><code><link rel="stylesheet" type="text/css" href="css/waw.css"/>
+            </code></pre>
+        </section>
+         <section>
+            <h2>Einbinden von CSS: Inline</h2>
+            <ul>
+                <li>Bei jedem Element über style-Attribut möglich</li>
+                <li>Verletzt Trennung zwischen Inhalt und Darstellung</li>
+            </ul>
+            <pre class="bash"><code><p style="color: red;">Hallo dies ist ein Absatz.</p>
+            </code></pre>
+        </section>
+    </section>
+    <section>
+        <section>
+            <h1>CSS-Selektoren</h1>
+        </section>
+         <section>
+            <h2>Aufbau einer CSS-Regel</h2>
+            <h5>Regel besteht aus <em>Selektor</em> und <em>Deklarationen</em></h5>
+            <ul>
+              <li>Der Selektor legt fest, für welche Elemente die Regel gilt</li>
+              <li>Die Deklarationen bestimmen die Darstellung der Elemente</li>
+              <li>Eine Deklaration weist einer Eigenschaft einen Wert zu (getrennt durch einen Doppelpunkt)</li>
+              <li>Deklarationen werden durch Semikolon getrennt</li>
+            </ul>
+            <img src="assets/cssAufbau.png">
+        </section>
+        <section>
+            <h2>Unterschiedliche Selektoren</h2>
+            <ul>
+                <li><b>Universal (*)</b> – Alle Elemente</li>
+                <li><b>Typ</b>  – Alle Elemente eines Typs (z. B. &lt;h1&gt;)</li>
+                <li><b>ID (#name)</b> – Element mit einer ID</li>
+                <li><b>Klasse (.name)</b> – Elemente, die einer Klasse über das class-Attribut zugeordnet wurden</li>
+                <li><b>Gruppen (a, b, c)</b> – Alle Elemente der Gruppe auf einmal</li>
+                <li><b>Nachfahre (a b)</b> – Nachfahren</li>
+                <li><b>Kind (a > b)</b> – Kinder von einem Element sind</li>
+                <li><b>Geschwister (a + b)</b> – Benachbarte Geschwisterelemente</li>
+                <li><b>Pseudoklassen (:klasse)</b> – Eingebaute Klassen</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Beispiel: Selektoren</h2>
+            <pre class="css"><code>
+            html body {
+              background: #222222;
+              color: #ffffff;
+              font-size: 32px;
+            }
+
+            h1 {
+              font-size: 2em;
+            }
+
+            #headline {
+              background: red;
+            }
+
+            .stuff {
+              border: 1px solid red;
+            }
+            </code></pre>
+        </section>
+        <section>
+            <h2>CSS3 :nth-child() Selector</h2>
+            <pre class="css"><code>
+            p:nth-child(2) {
+                background: #ff0000;
+            }
+
+            //general Syntax:
+            :nth-child(number) {
+                css declarations;
+            }
+            </code></pre>
+        </section>
+        <section>
+            <h2>Pseudoklassen</h2>
+            <ul>
+                <li><b>:link</b> – Link im originalen Zustand von &lt;a&gt;</li>
+                <li><b>:visited</b>  – Link nachdem er angeklickt wurde</li>
+                <li><b>:hover</b> – Link, wenn die Maus über dem Link steh</li>
+                <li><b>:active</b> – Link, wenn er gerade angeklickt wird</li>
+                <li><b>:focus</b> – Element, dass gerade den Fokus hat (Formulare, Links)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Pseudoklassen Beispiel</h2>
+            <pre class="css"><code>
+            /* Links stylen */
+            a:link { color: olive; }
+            a:visited { color: grey; }
+            a:active { color: red; }
+            a:hover { font-weight: bold; }
+            </code></pre>
+        </section>
+    </section>
+        <section>
+            <h2>Maßeinheiten</h2>
+            <h5>Relative Maßeinheiten</h5>
+            <ul>
+                <li>orientieren sich an anderen Werten</li>
+                <li>gut geeignet für Bildschirmdarstellung</li>
+                <li>Beispiel: Pixel (px), Prozent (%)</li>
+            </ul>
+            <h5>Absolute Maßeinheiten</h5>
+            <ul>
+                <li>stehen für sich</li>
+                <li>gut geeignet für Druckausgaben</li>
+                <li>Beispiel: Millimeter (mm) oder Punkt (pt)</li>
+            </ul>
+        </section>
+        <section>
+            <section>
+                <h2>Angabe von Farbwerten</h2>
+                <ul>
+                    <li><b>rgb(255,140,0)</b> – Farbanteile rot, grün, blau im Bereich 0…255</li>
+                    <li><b>#FF8C00</b> – Farbanteile hexadezimal (00…FF)</li>
+                    <li>benannte Farben: black, white, olive, …</li>
+                    <li><b>hsl(0, 100%, 50%)</b> – HSL (hue saturation lightness) Farbraum</li>
+                    <li>Angabe eines Alpha-Kanals als vierten Wert</li>
+                    <li><b>rgba(255,140,0, 0.5)</b> – a zwischen 0 und 1</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Farbpalette</h2>
+                <img src="assets/cssFarbpalette.png">
+            </section>
+        </section>
+        <section>
+             <section>
+                <h1>CSS-Layout</h1>
+            </section>
+            <section>
+                <h2>Display Model</h2>
+                <ul>
+                    <li><b>Alle</b>  Elemente haben ein Display Model</li>
+                    <li>H&auml;ufigst verwendete Models sind:</li>
+                    <li><code>Block</code> , <code>Inline-Block</code> , <code>Inline</code></li>
+                    <li>Neuerdings auch <code>Flex</code> bzw. Flexbox</li>
+                </ul>
+            </section>
+             <section>
+                <h2>Beispiel: Display Model</h2>
+                <pre class="html"><code>
+                &lt;div&gt;Dieses Element hat einen folgenden Absatz&lt;/div&gt;
+                &lt;p&gt;Dieses Element ebenfalls&lt;/p&gt;
+
+                &lt;span&gt;Diese&lt;/span&gt;
+                &lt;span&gt;Elemente&lt;/span&gt;
+                &lt;span&gt;nicht!&lt;/span&gt;</code></pre>
+            </section>
+            <section>
+                <h2>Box Model</h2>
+            </section>
+            <section>
+                <h2>width, height und z-index</h2>
+                <ul>
+                    <li><b>Alle</b>  Elemente haben <code>width</code>  und <code>height</code></li>
+                    <li>Default-Wert ist <code>inherit</code> bzw. <code>auto</code></li>
+                    <li>Einheiten f&uuml;r Dimensionen sind <code>em</code> , <code>px</code> , <code>pt</code></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Position</h2>
+                <ul>
+                    <li><b>Alle</b>  Elemente sind statisch by default</li>
+                    <li>Absolute Inhalte mit <code>position: absolute</code></li>
+                    <li>Fixierte Inhalte mit <code>position: fixed</code></li>
+                    <li>Statische Inhalte mit <code>position: static</code></li>
+                    <li>Relative Inhalte mit <code>position: relative</code></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Absolute Position</h2>
+                <p>
+                    Wenn position <code>absolute</code>  or <code>fixed</code> dann haben Elemente eine Position absolut zur linken oberen Ecke des Bildschirms und eine absolute Breite und H&ouml;he.
+                </p>
+            </section>
+            <section>
+                <h2>Relative Position</h2>
+                <p>
+                    Wenn position <code>static</code>  or <code>relative</code>  dann haben Elemente eine Position <code>relativ</code> zu ihrem umgebenden Element. Der &Uuml;bergang von <code>static</code>  zu <code>absolute</code>  or <code>fixed</code>  ist <b>NUR</b>  mit <code>relative</code> m&ouml;glich.
+                </p>
+            </section>
+            <section>
+                <h2>Beispiel: Static und Relative</h2>
+                <pre class="html"><code>
+                &lt;div&gt;
+                  Woop woop (I'm static by default)
+                  &lt;div style=&quot;position:relative&quot;&gt;
+                    I'm still containing
+                    &lt;p style=&quot;position:absolute&quot;&gt;
+                      I'm absolute
+                    &lt;/p&gt;
+                  &lt;/div&gt;
+                &lt;/div&gt;</code></pre>
+            </section>
+            <section>
+                <h2>Box Model: Absolute und Fixed</h2>
+                <ul>
+                    <li>Angabe <code>width</code>  und <code>height</code>  mit <code>px</code> , <code>%</code>  m&ouml;glich</li>
+                    <li>Absolut zur linken oberen Ecke des Bildschirms</li>
+                    <li>Absolut zum eigenen Element ohne Vererbung</li>
+                    <li>Position  <b>NUR</b>  noch mit <code>top</code> , <code>right</code> , <code>bottom</code> , <code>left</code></li>
+                    <li><code>z-index</code>  zum Einfluss der Zeichenreihenfolge moeglich</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Beispiel: Absolute und Fixed</h2>
+    <pre class="html"><code>&lt;style&gt;
+      div {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+      }
+    &lt;/style&gt;
+
+    &lt;div style=&quot;background:#ff0000;top:20px;left:20px;z-index:1&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;background:#ffff00;top:50px;left:50px;z-index:10&quot;&gt;&lt;/div&gt;
+    &lt;div style=&quot;background:#0000ff;top:80px;left:80px;z-index:1&quot;&gt;&lt;/div&gt;</code></pre>
+            </section>
+            <section>
+                <h2>Box Model: Static und Relative</h2>
+                <ul>
+                    <li>Angabe <code>width</code>  und <code>height</code>  mit <code>px</code> , <code>%</code>  m&ouml;glich<</li>
+                    <li>Relativ zum umgebenden Element</li>
+                    <li><code>z-index</code>  hat keine Wirkung bei <code>static</code></li>
+                    <li><code>z-index</code>  hat Einfluss bei <code>relative</code></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Box Model: Margin und Padding</h2>
+                <img src="assets/cssBoxModell.png">
+            </section>
+            <section>
+                <h2>Randangaben</h2>
+                <pre class="css"><code>
+                padding-top: 5px; 
+                padding-right: 10px; 
+                padding-bottom: 15px;
+                padding-left: 25px;
+
+                /*Kurzform: top, right, bottom, left*/
+                padding: 5px 10px 15px 25px;
+
+                padding-top: 20px; 
+                padding-right: 5px; 
+                padding-bottom: 20px;
+                padding-left: 5px;
+
+                /*Kurzform: top/ bottom, right/ left*/
+                padding: 20px 5px;
+                </code></pre>
+            </section>
+    </section>
+    <section>
+        <section>
+            <h1>CSS-Attribute (Beispiele)</h1>
+        </section>
+        <section>
+                <h2>Text: Behandlung von Overflow</h2>
+                <img src="assets/cssTextOverflow.png">
+        </section>
+        <section>
+                <h2>Text: Formatierung</h2>
+                <ul>
+                    <li><b>font-family</b> – Liste (kommagetrennt) von Zeichens&auml;tzen (Helvetia, Times New Roman)</li>
+                    <li><b>font-style</b> – Schriftstil (normal, italic (kursiv)</li>
+                    <li><b>font-size</b> – Schriftgr&ouml;&szlig;e</li>
+                    <li><b>color</b> – Textfarbe</li>
+                    <li><b>font-weight</b> – Schrift"gewicht" lighter, normal, bold, bolder</li>
+                    <li><b>text-decoration</b> – Textdekoration (underlinde, overline, line-through, blink (Nein!!)</li>
+                </ul>
+        </section>
+        <section>
+                <h2>Anzeigeart mit display</h2>
+                <ul>
+                    <li><b>none</b> – nichts anzeigen und auch keinen Platz daf&uuml;r freihalten</li>
+                    <li><b>inline</b> – im laufenden Textfluss anzeigen</li>
+                    <li><b>block</b> – nichts anzeigen und auch keinen Platz daf&uuml;r freihalten</li>
+                    <li><b>list-item</b> – wie block, aber mit Aufzählungszeichen davor</li>
+                </ul>
+        </section>
+        <section>
+                <h2>Hintergrund</h2>
+                <ul>
+                    <li><b>background-color</b> – Hintergrundfarbe</li>
+                    <li><b>background-image </b> – Hintergrundbild</li>
+                </ul>
+                 <h5><b>background-repeat</b> –  Wiederholen des Hintergrundbilds</h5>
+                <ul>
+                    <li><b>repeat</b> – Hintergrundfarbe</li>
+                    <li><b>repeat-x/y </b> – Wiederholen nur in X/Y-Richtung</li>
+                    <li><b>no-repeat</b> – Keine Wiederholung</li>
+                </ul>
+        </section>
+        <section>
+                <h5>List-Styles</h5>
+                <img src="assets/cssListStyle.png">
+        </section>
+         </section>
+         <section>
+        <section>
+                <h1>Kaskadierung und Vererbung</h1>
+        </section>
+        <section>
+                <h2>Kaskadierung (Welche Regel gilt?)</h2>
+                <ol>
+                    <li>kontextabhängig individuell<b>(p#id)</b> </li>
+                    <li>individuell<b>(#id)</b></li>
+                    <li>kontextabhängiger Klasse<b>(p.achtung) </b></li>
+                    <li>allgemeiner Klasse<b>(.warnung)</b></li>
+                    <li>redefiniertem Standard Format<b>(p)</b></li>
+                </ol>
+                <ul>
+                    <li>Innerhalb einer Ebene hat !important Vorrang</li>
+                    <li>Reihenfolge in der Datei ist das letzte Kriterium</li>
+                    <li>inline vor embedded vor externem Stylesheet</li>
+                </ul>
+         </section>
+         <section>
+<pre class="html"><code>
+&lt;style&gt;
+    p#hervorhebung  { color: white; }
+    p               { color: olive; }
+    achtung         { color: green; }
+    p.achtung       { color: orange;}
+    p#hervorhebung  { color: red;   }
+    #hervorhebung   { color: grey;  }
+&lt;/style&gt;
+
+&lt;p id=&quot;hervorhebung&quot; class=&quot;achtung&quot;&gt;Dies soll hervorgehoben werden.&lt;/p&gt;
+&lt;p id=&quot;auch&quot; class=&quot;achtung&quot;&gt;Und das hier auch.&lt;/p&gt;
+&lt;p id=&quot;noch&quot; class=&quot;achtung&quot; style=&quot;color:green&quot;&gt;Dies soll 
+hervorgehoben werden.&lt;/p&gt;</code></pre>
+                 </section>
+                <section>
+                <h2>Vererbung</h2>
+                <span>Wenn es für ein Element kein direktes Format gibt, wird das Format des übergeordneten Elements übernommen (Vererbung von Formaten)</span>
+                <ul>
+                    <li>Vererbung folgt dem Dokumenten-Baum</li>
+                    <li>Manche Attribute werden nicht vererbt (z. B. text-decoration)/li>
+                </ul>
+        </section>
+    </section>
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Webanwendungen - Martina Kraus</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Martina Kraus">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+    <section>
+        <h1>Workflow</h1>
+    </section>
+
+    <section>
+        <h2>Inhalt</h2>
+        <ul>
+            <li>Triangular Workflow</li>
+            <li>Work with GitHub</li>
+            <li>Organization</li>
+        </ul>
+    </section>
+    <section>
+        <section>
+            <h1>Triangular Workflow</h1>
+        </section>
+         <section>
+            <h2>Fork Management</h2>
+            <ul>
+                <li>vollst&auml;ndige Kopie eines Repos (upstream)</li>
+                <li>Eigene Weiterentwicklungen / Bugfixings</li>
+                <li>Taucht als eigenes Repo unter deinem Account auf</li>
+                <img width="960px" height="96px" src="assets/contribution-fork.png">
+            </ul>
+        </section>
+         <section>
+                <h2>Beispiel</h2>
+                <pre class="bash"><code>$ git clone http://github.com/YOUR-ACCOUNTNAME/lycheeJS
+                </code></pre>
+                        <ul>
+                <li>Geforktes Repo dann als lokale Kopie auf dem Arbeitsrechner clonen</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Don't get out of sync</h2>
+            <ul>
+                <li>Das geforkte Repo muss nat&uuml;rlich auch up-to-date sein</li>
+                <li>Regelm&auml;&szlig;iges pullen des originalen Repos (upstream):</li>
+            </ul>
+            <pre class="bash"><code>$ git pull https://github.com/Artificial-Engineering/lycheeJS.git
+                </code></pre>
+        </section>
+        <section>
+            <h2>!!! Pushen nicht vergessen !!!</h2>
+            <ul>
+                <li>Die Updates sind bisher nur in deiner lokalen Kopie auf dem Rechner</li>
+                <li>Pushen, um die &Auml;nderungen auch in deinem Github Fork zu haben</li>
+            </ul>
+            <pre class="bash"><code>$ git push
+                </code></pre>
+        </section>
+        <section>
+            <h2>Pull Request</h2>
+            <ul>
+                <li>Nach der Arbeit stellt man einen Pull Request an das originale Repo</li>
+                <li>Fork Maintainer initiiert Pull Request</li>
+                <li>Maintainer des originalen Repos (upstream) entscheidet ob er deine &Auml;nderungen annimmt und merged</li>
+            </ul>
+            <img src="assets/contribution-pullrequest.png">
+        </section>
+            <section>
+            <h2>Triangular Workflow</h2>
+            <img src="assets/contribution-workflow.png">
+        </section>
+    </section>
+    <section>
+         <section>
+            <h1>Working with Github</h1>
+        </section>
+        <section>
+            <h2>Issues</h2>
+            <ul>
+                <li>Probleme und Diskussionen zu einem Repo</li>
+                <li>Verlinkung von Contributors (@user)</li>
+                <li>Verlinkung von Commits (@hash)</li>
+                <li>Verlinkung von Issues (#number)</li>
+                <li>Votes und Reactions</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Find Issues</h2>
+            <img src="assets/contribution-issues.png">
+        </section>
+        <section>
+            <h2>Assign Issues</h2>
+            <img src="assets/contribution-assignissue.png">
+        </section>
+    </section>
+    <section>
+        <section>
+            <h1>Organization</h1>
+        </section>
+        <section>
+            <h1>WAWSS16</h1>
+            <pre class="bash"><code>https://github.com/WAWSS16
+                </code></pre>
+            <ul>
+                <li>Github Organization k&ouml;nnen mehrere Repos haben</li>
+                <li>waw - Slides</li>
+                <li>Organization - Issues zur Vorlesung</li>
+                <li>AwesomeBoilerplate - Projekt zum foren (sp&auml;ter)</li>
+             </ul>
+        </section>
+        <section>
+            <h1>Aufgabe 1</h1>
+            <ol>
+                <li>Meldet euch bei Github an</li>
+                <li>Geht auf https://github.com/INT-WAW/Boilerplate</li>
+                <li>Sucht Issue #10 - Schikane</li>
+                <li>Kommentiert (pro Gruppe ein Kommentar) den Issue mit einem lustigem Gif</li>
+                <li>Erkl&auml;rt den IB'lern den Krieg ;-) </li>
+             </ol>
+        </section>
+        <section>
+            <h1>Aufgabe 2</h1>
+            <ol>
+                <li>Forke in unserer Orga WAWSS16 die AwesomeBoilerplate</li>
+                <li>Geht auf https://github.com/INT-WAW/Boilerplate</li>
+                <li>&Auml;ndere das Projekt nach der Aufgabenbeschreibung (zu finden im Moodle) ab</li>
+                <li>Erstelle f&uuml;r jede Aufgabe einen Issue und weise ihn jemandem zu.</li>
+                <li>Erstelle einen Pull Request</li>
+             </ol>
+        </section>
+    </section>
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+</script>
+
+</body>
+</html>

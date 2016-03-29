@@ -1,0 +1,445 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"c",
+				"console"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"test",
+				"test2"
+			],
+			[
+				"t",
+				"test"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "css.html",
+			"settings":
+			{
+				"buffer_size": 10452,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Workflow.html",
+			"settings":
+			{
+				"buffer_size": 7305,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 390.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Add Repository"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/media/codekittey/My Passport/courses/waw/wawSS16",
+		"/media/codekittey/My Passport/courses/waw/wawSS16/waw",
+		"/media/codekittey/My Passport/courses/waw/wawSS16/waw/assets"
+	],
+	"file_history":
+	[
+		"/opt/lycheejs-edge/projects/emoji-chat/source/ui/element/Select.js",
+		"/opt/lycheejs-edge/projects/emoji-chat/source/ui/element/Chat.js",
+		"/media/codekittey/My Passport/Development/git-todo/bin/install.sh",
+		"/opt/lycheejs-edge/projects/text-chat/source/state/Chat.js",
+		"/opt/lycheejs-edge/projects/text-chat/source/ui/entity/Messages.js",
+		"/opt/lycheejs-edge/projects/text-chat/source/ui/entity/Messages.fnt",
+		"/opt/lycheejs-edge/projects/emoji-chat/source/state/Welcome.js",
+		"/opt/lycheejs-edge/projects/emoji-chat/source/state/Welcome.json",
+		"/opt/lycheejs-edge/projects/emoji-chat/source/state/Chat.json",
+		"/opt/lycheejs-edge/projects/emoji-chat/source/state/Chat.js",
+		"/opt/lycheejs-edge/projects/emoji-chat/source/Main.js",
+		"/opt/lycheejs-edge/libraries/lychee/source/ui/Blueprint.js",
+		"/opt/lycheejs-edge/projects/cultivator/ranger/source/state/Welcome.json",
+		"/opt/lycheejs-edge/projects/cultivator/ranger/source/state/Profile.json",
+		"/opt/lycheejs-edge/projects/cultivator/ranger/source/Main.js",
+		"/media/codekittey/My Passport/courses/waw/wawSS16/AwesomeBoilerplate/index.html",
+		"/media/codekittey/My Passport/courses/waw/Slides/01-Workflow.html",
+		"/media/codekittey/My Passport/courses/waw/wawSS16/waw/Workflow.html",
+		"/opt/lycheejs-edge/projects/cultivator/ranger/source/state/Welcome.js",
+		"/opt/lycheejs-edge/projects/cultivator/ranger/index.html",
+		"/opt/lycheejs-edge/projects/emoji-chat/index.html",
+		"/opt/lycheejs-edge/libraries/lychee/source/ui/Layer.js",
+		"/opt/lycheejs-edge/projects/emoji-chat/lychee.pkg",
+		"/opt/lycheejs-edge/libraries/lychee/source/ui/element/Viewport.js",
+		"/opt/lycheejs-edge/projects/emoji-chat/source/ui/Select.js",
+		"/opt/lycheejs-edge/libraries/lychee/source/ui/Element.js",
+		"/opt/lycheejs-edge/projects/emoji-chat/source/ui/Chat.js",
+		"/opt/lycheejs-edge/bin/runtime/html-webview/package.sh",
+		"/home/codekittey/Development/praxis-gelbke.de/.gitignore",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/contact/contact.html",
+		"/opt/lycheejs-edge/bin/runtime/html-webview/update.sh",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/open/open.html",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/app.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/emphases/emphases.html",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/emphases/emphases.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/emphases/emphases-controller.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/contact/contact.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/contact/contact-controller.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/fotos/fotos.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/index.html",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/index.html",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/app/app.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/components/navbar/navbar.html",
+		"/home/codekittey/Development/praxis-gelbke.de/bower.json",
+		"/home/codekittey/Development/rhein-neckar/index.html",
+		"/home/codekittey/Development/dba/Vorbemerkungen.html",
+		"/home/codekittey/Development/praxis-gelbke.de/client/css/two.css",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/app/start/start.js",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/app/start/start-controller.js",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/app/start/start.html",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/way/way.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/way/way-controller.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/team/team-controller.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/open/open.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/team/team.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/open/open-controller.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/fotos/fotos-controller.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/about/about.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/about/about-controller.js",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/way/way.html",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/team/team.html",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/fotos/fotos.html",
+		"/home/codekittey/Development/praxis-gelbke.de/client/app/about/about.html",
+		"/home/codekittey/Development/praxis-gelbke/index.html",
+		"/home/codekittey/Development/praxis-gelbke/css/two.css",
+		"/home/codekittey/Development/praxis-gelbke/css/three.css",
+		"/home/codekittey/Development/praxis-gelbke/css/one.css",
+		"/home/codekittey/Development/waw/Vorbemerkungen.html",
+		"/home/codekittey/Development/dba/Einfuehrung.html",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/components/navbar/navbar.html",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/app/blog/blog-controller.js",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/app/app.css",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/app/blog/blog.html",
+		"/home/codekittey/Development/CodeKitteyDemoHP/client/app/blog/blog.js",
+		"/home/codekittey/Development/CodeKitteyDemoHP/server/app.js",
+		"/home/codekittey/Development/CodeKitteyDemoHP/server/routes.js",
+		"/home/codekittey/Development/playerStatistics/css/main.css",
+		"/home/codekittey/Development/playerStatistics/player_entry.html",
+		"/home/codekittey/Development/playerStatistics/player_detail.html",
+		"/home/codekittey/Development/schafesholz/Meilenstein3/book_entry.html",
+		"/home/codekittey/Development/WebSpiders/Meilenstein 3/html/player_entry.html",
+		"/home/codekittey/Development/TeamMPR-NOSQL/public/index.html",
+		"/home/codekittey/Development/TeamMPR-NOSQL/app/app.js",
+		"/home/codekittey/Development/TeamMPR-NOSQL/public/javascript/fusballRoutes.js",
+		"/home/codekittey/Development/TeamMPR-NOSQL/SeasonCalculationService.js",
+		"/home/codekittey/Development/TeamMPR-NOSQL/server.js",
+		"/home/codekittey/Development/schafesholz/Meilenstein5/book_entry.html",
+		"/home/codekittey/Development/WebSpiders/Meilenstein 99/html/player_entry.html",
+		"/home/codekittey/Development/WebSpiders/Meilenstein 99/html/home.html",
+		"/home/codekittey/Development/lycheeJS-website/index.html",
+		"/home/codekittey/Development/lycheeJS-website/design/index.css",
+		"/home/codekittey/Development/CodeKittey.github.io/index.html",
+		"/home/codekittey/Development/CodeKittey.github.io/CNAME",
+		"/home/codekittey/Development/RheinNeckarJS.github.io/design/index.css",
+		"/home/codekittey/Development/lycheeJS-website/content/faq/faq.md",
+		"/home/codekittey/Development/RheinNeckarJS.github.io/README.md",
+		"/home/codekittey/Development/RheinNeckarJS.github.io/index.html",
+		"/home/codekittey/Development/RheinNeckarJS.github.io/server.sh",
+		"/home/codekittey/Development/rhein-neckar/img/nodeschool.svg",
+		"/home/codekittey/Development/lycheeJS-website/download/tutorial/app-server.md",
+		"/home/codekittey/Development/lycheeJS-website/source/state/Faq.js",
+		"/home/codekittey/Development/lycheeJS-website/source/state/Features.js",
+		"/home/codekittey/Development/lycheeJS-website/source/Main.js",
+		"/home/codekittey/Development/lycheeJS-website/source/state/Introduction.js",
+		"/opt/lycheejs-edge/bin/breeder.js",
+		"/home/codekittey/Development/lycheeJS-website/download/tutorial/app-client.md",
+		"/opt/lycheejs-edge/bin/breeder.sh",
+		"/home/codekittey/Development/tutorial-stuff/tutorial-server/source/net/remote/Chat.js",
+		"/home/codekittey/Development/tutorial-stuff/tutorial-server/source/net/Server.js",
+		"/opt/lycheejs-edge/projects/chat/source/state/Chat.js",
+		"/opt/lycheejs-edge/projects/server-app/source/net/Server.js",
+		"/opt/lycheejs-edge/libraries/breeder/source/Template.js",
+		"/opt/lycheejs-edge/libraries/breeder/asset/lychee.pkg",
+		"/opt/lycheejs-edge/libraries/lychee/lychee.pkg",
+		"/opt/lycheejs-edge/bin/fertilizer.js",
+		"/opt/lycheejs-edge/bin/fertilizer.sh",
+		"/opt/lycheejs-edge/libraries/breeder/source/Main.js",
+		"/opt/lycheejs-edge/libraries/breeder/lychee.pkg",
+		"/opt/lycheejs-edge/projects/server-app/lychee.pkg",
+		"/home/codekittey/Development/waw/Einfuehrung.html",
+		"/home/codekittey/Development/opd2revealjs/content.json",
+		"/home/codekittey/Development/opd2revealjs/parseXML.js",
+		"/home/codekittey/Development/opd2revealjs/content.xml",
+		"/home/codekittey/Development/opd2revealjs/test.odp_FILES/content.xml",
+		"/home/codekittey/Development/lycheeJS-website/server.sh",
+		"/media/codekittey/My Passport/courses/waw/waw_lecture/waw_lecture/waw_lecture/WAW WS15/Folien/WAW_00_Vorbemerkungen.odp_FILES/meta.xml",
+		"/media/codekittey/My Passport/courses/waw/waw_lecture/waw_lecture/waw_lecture/WAW WS15/Folien/WAW_00_Vorbemerkungen.odp_FILES/styles.xml",
+		"/home/codekittey/Development/opd2revealjs/convert.js"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"profile",
+			"welcome",
+			"\">\n",
+			"rgba",
+			"controller",
+			"navbar",
+			"#main",
+			"contentFooter",
+			"#footer .secondary",
+			"#footer",
+			"A3ABE6",
+			"#A3ABE6",
+			"mask.png",
+			"praxis-gelbke-sw",
+			"div.teeth",
+			"teeth a",
+			"value",
+			"}}\"",
+			"};\n",
+			"verwalten",
+			"404844",
+			"main > div",
+			"333333",
+			"#faq ",
+			":(\n",
+			"javascript",
+			"_bootup",
+			"platform",
+			"platfrom",
+			"_inject",
+			"platform",
+			"source",
+			"target",
+			"raw_arg1",
+			"raw_arg3",
+			"raw_arg2",
+			"PARAMETERS",
+			"titel"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "css.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10452,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6053,
+								6053
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Workflow.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7305,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2165,
+								2165
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 858.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 242.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

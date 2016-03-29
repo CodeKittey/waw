@@ -199,7 +199,7 @@
             </ul>
         </section>
         <section>
-            <h2>CSS3 :nth-child() Selector</h2>
+            <h2>Pseudoklassen Beispiel</h2>
             <pre class="css"><code>
             /* Links stylen */
             a:link { color: olive; }
@@ -249,7 +249,7 @@
                 <h2>Display Model</h2>
                 <ul>
                     <li><b>Alle</b>  Elemente haben ein Display Model</li>
-                    <li>Haeufigst verwendete Models sind:</li>
+                    <li>H&auml;ufigst verwendete Models sind:</li>
                     <li><code>Block</code> , <code>Inline-Block</code> , <code>Inline</code></li>
                     <li>Neuerdings auch <code>Flex</code> bzw. Flexbox</li>
                 </ul>
@@ -272,7 +272,7 @@
                 <ul>
                     <li><b>Alle</b>  Elemente haben <code>width</code>  und <code>height</code></li>
                     <li>Default-Wert ist <code>inherit</code> bzw. <code>auto</code></li>
-                    <li>Einheiten fuer Dimensionen sind <code>em</code> , <code>px</code> , <code>pt</code></li>
+                    <li>Einheiten f&uuml;r Dimensionen sind <code>em</code> , <code>px</code> , <code>pt</code></li>
                 </ul>
             </section>
             <section>
@@ -313,7 +313,7 @@
             <section>
                 <h2>Box Model: Absolute und Fixed</h2>
                 <ul>
-                    <li>Angabe <code>width</code>  und <code>height</code>  mit <code>px</code> , <code>%</code>  moeglich</li>
+                    <li>Angabe <code>width</code>  und <code>height</code>  mit <code>px</code> , <code>%</code>  m&ouml;glich</li>
                     <li>Absolut zur linken oberen Ecke des Bildschirms</li>
                     <li>Absolut zum eigenen Element ohne Vererbung</li>
                     <li>Position  <b>NUR</b>  noch mit <code>top</code> , <code>right</code> , <code>bottom</code> , <code>left</code></li>
@@ -337,7 +337,7 @@
             <section>
                 <h2>Box Model: Static und Relative</h2>
                 <ul>
-                    <li>Angabe <code>width</code>  und <code>height</code>  mit <code>px</code> , <code>%</code>  moeglich</li>
+                    <li>Angabe <code>width</code>  und <code>height</code>  mit <code>px</code> , <code>%</code>  m&ouml;glich<</li>
                     <li>Relativ zum umgebenden Element</li>
                     <li><code>z-index</code>  hat keine Wirkung bei <code>static</code></li>
                     <li><code>z-index</code>  hat Einfluss bei <code>relative</code></li>
@@ -367,6 +367,96 @@
                 padding: 20px 5px;
                 </code></pre>
             </section>
+    </section>
+    <section>
+        <section>
+            <h1>CSS-Attribute (Beispiele)</h1>
+        </section>
+        <section>
+                <h2>Text: Behandlung von Overflow</h2>
+                <img src="assets/cssTextOverflow.png">
+        </section>
+        <section>
+                <h2>Text: Formatierung</h2>
+                <ul>
+                    <li><b>font-family</b> – Liste (kommagetrennt) von Zeichens&auml;tzen (Helvetia, Times New Roman)</li>
+                    <li><b>font-style</b> – Schriftstil (normal, italic (kursiv)</li>
+                    <li><b>font-size</b> – Schriftgr&ouml;&szlig;e</li>
+                    <li><b>color</b> – Textfarbe</li>
+                    <li><b>font-weight</b> – Schrift"gewicht" lighter, normal, bold, bolder</li>
+                    <li><b>text-decoration</b> – Textdekoration (underlinde, overline, line-through, blink (Nein!!)</li>
+                </ul>
+        </section>
+        <section>
+                <h2>Anzeigeart mit display</h2>
+                <ul>
+                    <li><b>none</b> – nichts anzeigen und auch keinen Platz daf&uuml;r freihalten</li>
+                    <li><b>inline</b> – im laufenden Textfluss anzeigen</li>
+                    <li><b>block</b> – nichts anzeigen und auch keinen Platz daf&uuml;r freihalten</li>
+                    <li><b>list-item</b> – wie block, aber mit Aufzählungszeichen davor</li>
+                </ul>
+        </section>
+        <section>
+                <h2>Hintergrund</h2>
+                <ul>
+                    <li><b>background-color</b> – Hintergrundfarbe</li>
+                    <li><b>background-image </b> – Hintergrundbild</li>
+                </ul>
+                 <h5><b>background-repeat</b> –  Wiederholen des Hintergrundbilds</h5>
+                <ul>
+                    <li><b>repeat</b> – Hintergrundfarbe</li>
+                    <li><b>repeat-x/y </b> – Wiederholen nur in X/Y-Richtung</li>
+                    <li><b>no-repeat</b> – Keine Wiederholung</li>
+                </ul>
+        </section>
+        <section>
+                <h5>List-Styles</h5>
+                <img src="assets/cssListStyle.png">
+        </section>
+         </section>
+         <section>
+        <section>
+                <h1>Kaskadierung und Vererbung</h1>
+        </section>
+        <section>
+                <h2>Kaskadierung (Welche Regel gilt?)</h2>
+                <ol>
+                    <li>kontextabhängig individuell<b>(p#id)</b> </li>
+                    <li>individuell<b>(#id)</b></li>
+                    <li>kontextabhängiger Klasse<b>(p.achtung) </b></li>
+                    <li>allgemeiner Klasse<b>(.warnung)</b></li>
+                    <li>redefiniertem Standard Format<b>(p)</b></li>
+                </ol>
+                <ul>
+                    <li>Innerhalb einer Ebene hat !important Vorrang</li>
+                    <li>Reihenfolge in der Datei ist das letzte Kriterium</li>
+                    <li>inline vor embedded vor externem Stylesheet</li>
+                </ul>
+         </section>
+         <section>
+<pre class="html"><code>
+&lt;style&gt;
+    p#hervorhebung  { color: white; }
+    p               { color: olive; }
+    achtung         { color: green; }
+    p.achtung       { color: orange;}
+    p#hervorhebung  { color: red;   }
+    #hervorhebung   { color: grey;  }
+&lt;/style&gt;
+
+&lt;p id=&quot;hervorhebung&quot; class=&quot;achtung&quot;&gt;Dies soll hervorgehoben werden.&lt;/p&gt;
+&lt;p id=&quot;auch&quot; class=&quot;achtung&quot;&gt;Und das hier auch.&lt;/p&gt;
+&lt;p id=&quot;noch&quot; class=&quot;achtung&quot; style=&quot;color:green&quot;&gt;Dies soll 
+hervorgehoben werden.&lt;/p&gt;</code></pre>
+                 </section>
+                <section>
+                <h2>Vererbung</h2>
+                <span>Wenn es für ein Element kein direktes Format gibt, wird das Format des übergeordneten Elements übernommen (Vererbung von Formaten)</span>
+                <ul>
+                    <li>Vererbung folgt dem Dokumenten-Baum</li>
+                    <li>Manche Attribute werden nicht vererbt (z. B. text-decoration)/li>
+                </ul>
+        </section>
     </section>
     </div>
 

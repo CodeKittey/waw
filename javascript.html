@@ -41,21 +41,18 @@
     <!-- Any section element inside of this container is displayed as a slide -->
     <div class="slides">
     <section>
-        <h1>JavaScript</h1>
+        <h1>Web</h1>
     </section>
 
     <section>
         <h2>Inhalt</h2>
         <ul>
-            <li>More JavaScript</li>
             <li>DOM Event Model</li>
-            <li>Scoping/ Hoisting</li>
-            <li>Closures</li>
-            <li>Callback</li>
+            <li>API</li>
             <li>XHR</li>
-            <li>Best practices</li>
         </ul>
     </section>
+
     <section>
         <section>
             <h1>DOM Event Model (Level 3)</h1>
@@ -73,7 +70,7 @@
             <span>Kein Support in IE 6-8: EventTarget.attachEvent</span>
             <pre class="javascript"><code>
 // Assuming myButton is a button element
-myButton.addEventListener(  'click', 
+myButton.addEventListener(  'click',
                             function(){alert('Hello world');}
                         );
             </code></pre>
@@ -89,23 +86,153 @@ myButton.addEventListener(  'click',
             <span>Leider nur ein Eventh&auml;ndler pro Element und pro Event</span>
             <pre class="javascript"><code>
 // Assuming myButton is a button element
-myButton.onclick = function(event){alert('Hello world');};
+myButton.onclick = function(event){alert('Hello world');};</code></pre>
         </section>
-         <section>
-            <h2>Events:</h2>
-            <ul>
-                <li>click</li>
-                <li>abort</li>
-                <li>load</li>
-                <li>mouse/ -out, -over, -down, -enter, -leave</li>
-                <li>key/ -out, -over, -down, -enter, -leave</li>
-                <li>load</li>
+		<section>
+		   <h2>Events:</h2>
+		   <ul>
+			   <li>click, dblclick</li>
+			   <li>key/ -down, -up</li>
+			   <li>mouse/ -down, -enter, -move, -leave</li>
+			   <li>load, unload</li>
+			   <li>scroll</li>
+		   </ul>
+	   </section>
+		</section>
+		<section>
+			<section>
+	            <h1>Web-API</h1>
+	        </section>
+			<section>
+			<h2>Application program interface (API)</h2>
+	        <ul>
+	            <li>Programmierschnittstelle</li>
+	            <li>Anbindung an das System erm&ouml;glichen</li>
+	            <li>z.B an Datenbanken, WebServern, oder Modulen</li>
+				<li>Hat nichts mit dem DOM zu tun</li>
+	        </ul>
+			</section>
+			<section>
+			<h2>Herausforderung</h2>
+			<span>schnelle abfragen udn analysieren von Daten</span>
+	        <ul>
+	            <li>Facebook, another shitty social media platform</li>
+	            <li>Daten in der Cloud</li>
+	            <li>NSA</li>
+	        </ul>
+			</section>
+			<section>
+			<h2>Bisher gel&ouml;st:</h2>
+	        <ol>
+	            <li>Request an den Server</li>
+	            <li>Server holt Daten aus der Datenbank</li>
+	            <li>Serverseitig wird html mit den Daten erstellt bzw zusammengef&uuml;gt</li>
+				<li>komplette HTML-Seite geht zur&uuml;ck an den Client</li>
+				<li>User dr&uuml;ckt nochmal auf F5</li>
+				<li>Beginne bei Punkt 1</li>
+	        </ol>
+			</section>
+			<section>
+			<img src="assets/hamster.jpg">
+			</section>
+			<section>
+			<h2>Besser:</h2>
+	        <ul>
+	            <li>Server bietet Datenschnittstelle an.</li>
+	        </ul>
+			<pre class="bash"><code>
+	GET servername:port/api/blog/11 //Den Blogpost mit der ID 11 laden
+	GET servername:port/api/blogs   //Alle Blogposts laden
+	PUT servername:port/api/user/11 //updated User mit der ID 11
+	DELETE servername:port/api/user/11 //loesche User mit der ID 11
+			</code></pre>
+			</section>
+			<section>
+			<h2>GET servername:port/blog/11</h2>
+			<pre class="bash"><code>
+{
+  name: "codekitteys awesome blog",
+  date: "25.05.1987",
+  content: "This is my first awesome blog entry..so much awesomness"
+}
+			</code></pre>
+			</section>
+			<section>
+			<h2>Besser:</h2>
+			<ul>
+				<li>Server bietet Datenschnittstelle an.</li>
+				<li>Client erh&auml;lt nur einmal HTML und cached dieses.</li>
+				<li>Es werden nur noch Daten nachgeladen.</li>
+			</ul>
+			</section>
+			<section>
+			<h2>Wichtig:</h2>
+			<ul>
+				<li>GET: laden von Ressourcen</li>
+				<li>PUT: updaten von Ressourcen</li>
+				<li>POST: neu anlegen einer Ressource</li>
+				<li>DELETE: l&ouml;schen einer Ressource</li>
+			</ul>
+			</section>
+			<section>
+			<img src="assets/happyhamster.jpg">
+			</section>
+		</section>
+		<section>
+			<section>
+	            <h1>XMLHttpRequest</h1>
+	        </section>
+			<section>
+			<h2>XHR</h2>
+			<ul>
+				<li>XHR steht f&uuml;r XMLHttpRequest</li>
+				<li>Neue API ist `HTTP fetch` (aber ist dank MS noch nciht standardisiert)</li>
+				<li>Aktuell: XHR2</li>
+			</ul>
+			</section>
+			<section>
+			<h2>XHR</h2>
+			<ul>
+				<li>Bisher: Request an den Server mithilfe des form-Tags</li>
+				<li>individuelle Erstellung des Request mit XHR2</li>
+				<li>Festlegung von HTTP-Methode, Adresse, ResponseType</li>
+			</ul>
+			</section>
+			<section>
+			<h2>Beispiel: (Empfangen von Daten)</h2>
+			<pre class="javascript"><code>
+	var xhr = new XMLHttpRequest();
 
-            </ul>
-        </section>
-     </section>  
+	xhr.open('GET', 'http://server/api/');
+
+	xhr.responseType = 'json';
+
+	xhr.onload = function() {
+
+		var data = xhr.response;
+		if (data !== null) {
+			console.log(data); // Parsed JSON object
+			}
+
+		};
+
+	xhr.send(null);</code></pre>
+		</section>
+		<section>
+			<h2>Beispiel: (Senden von Daten)</h2>
+			<pre class="javascript"><code>
+	var formData = new FormData();
+	formData.append('username', 'johndoe');
+	formData.append('id', 123456);
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', '/server', true);
+	xhr.onload = function(e) { ... };
+
+	xhr.send(formData);</code></pre>
+			</section>
+		</section>
     </div>
-
 </div>
 
 <script src="lib/js/head.min.js"></script>

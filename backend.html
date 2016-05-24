@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Webanwendungen - Martina Kraus</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Martina Kraus">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+    <section>
+        <h1>Lessons learned</h1>
+    </section>
+
+    <section>
+        <h2>Inhalt</h2>
+        <ul>
+            <li>XHR vs. XHR2</li>
+            <li>Asynchron vs. Synchron (AJAX)</li>
+            <li>Config-Files</li>
+            <li>.gitignore</li>
+			<li>EsLint</li>
+        </ul>
+    </section>
+    <section>
+        <section>
+            <h1>XHR vs. XHR2</h1>
+        </section>
+         <section>
+            <h2>Don't get confused</h2>
+            <span>Zugegeben, die Dokumentation ist echt schei&szlig;e</span><br>
+			<span>Die Qual eines jeden Software-Entwicklers.</span>
+        </section>
+         <section>
+            <h2>XHR (1)</h2>
+			<pre class="javascript"><code>var xhr = new XMLHttpRequest();
+
+	xhr.open('GET', 'http://server/api/');
+
+	xhr.responseType = 'json';
+
+	xhr.onreadystatechange = function() {
+
+		if ((request.readyState === 4)
+			&amp;&amp; (request.status === 200)
+			&amp;&amp; (request.responseText !== null)) {
+			// onsuccess
+			}
+		};
+
+	xhr.send();</code></pre>
+        </section>
+        <section>
+            <h2>Readystate?</h2>
+			<span>Bearbeitungsstatus (manche Browser unterstützen nur 0, 1 und 4).</span>
+            <img src="assets/readyState.png">
+        </section>
+        <section>
+            <h1>Wtf????????</h1>
+        </section>
+         <section>
+            <h2>Einfacher: XHR2</h2>
+			<pre class="javascript"><code>
+	var xhr = new XMLHttpRequest();
+
+	xhr.open('GET', 'http://server/api/');
+
+	xhr.responseType = 'json';
+
+	xhr.onload = function() {
+
+		var data = xhr.response;
+		if (data !== null) {
+			console.log(data); // Parsed JSON object
+			}
+
+		};
+
+	xhr.send(null);</code></pre>
+        </section>
+         <section>
+            <h2>Event handlers:</h2>
+            <ul>
+				<li><b>onloadstart</b> – The fetch initiates.</li>
+                <li><b>onprogress</b>  – Transmitting data.</li>
+                <li><b>onabort</b> – When the fetch has been aborted. For instance, by invoking the abort() method.</li>
+                <li><b>onerror</b> – The fetch failed.</li>
+                <li><b>onload</b> – The fetch succeeded.</li>
+                <li><b>ontimeout</b> – The author specified timeout has passed before the fetch completed.</li>
+                <li><b>onloadend</b> – The fetch completed (success or failure).</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Noch besser:</h2>
+			<ul>
+              <li>getResponseHeader()</li>
+              <li>getResponseHeaders()</li>
+              <li>responseType</li>
+              <li>overrideMimeType()</li>
+            </ul>
+        </section>
+		<section>
+			<h1>Alle wollen true!!!!!</h1>
+			<pre class="javascript"><code>xhr.open('GET', 'http://server/api/', true);</code></pre>
+		</section>
+		<section>
+			<img src="assets/eichhorn.jpg"><br>
+			<span>Default ist der Flag true.</span>
+			<span>Und was bedeutet er?</span>
+		</section>
+    </section>
+	<section>
+		<section>
+			<h1>Asynchron vs Synchron</h1>
+		</section>
+         <section>
+            <h2>Synchron</h2>
+            <img src="assets/synchron.png">
+        </section>
+		<section>
+		   <h2>Synchron</h2>
+			<ul>
+				<li>Client blockiert solange bis der Response da ist</li>
+				<li>Keine weitere User Interaktion m&ouml;glich.</li>
+				<li>Nur ein gleichzeitiger Request m&ouml;glich</li>
+			</ul>
+	   </section>
+	   <section>
+		  <h2>Asynchron</h2>
+		  <img src="assets/async.png">
+	  </section>
+	  <section>
+		 <h2>Asynchron</h2>
+		  <ul>
+			  <li>Eine "AJAX"-Engine &uuml;bernimmt das Empfangen und Senden von Requests</li>
+			  <li>Server verarbeitet die Requests aber der Client ist losgekoppelt.</li>
+			  <li>Mehrere gleichzeitige Requests m&ouml;glich</li>
+		  </ul>
+	 </section>
+    <section>
+            <h2>Vorteile Asynchron</h2>
+            <ul>
+				<li>Client blockiert nicht</li>
+				<li>Interaktiv (wie Desktopanwendung)</li>
+				<li>Keine extra Plugins n&ouml;etig </li>
+            </ul>
+        </section>
+        <section>
+			<h2>Nachteile Asynchron</h2>
+			<ul>
+				<li>Schwierig zu testen und debuggen (Wann kommt der Request?)</li>
+				<li>Keine sorgf&auml;ltige Browserhistorie.</li>
+				<li>Bookmarks funktionieren nicht</li>
+			</ul>
+        </section>
+        <section>
+			 <img src="assets/eich.gif">
+        </section>
+        <section>
+            <h2>Wann lade ich die Daten?</h2>
+            <ol>
+                <li>Bei dem Seitenaufruf</li>
+                <li>Bei jedem Klick auf den Toggle-Button</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Bei dem Seitenaufruf</h2>
+			<ul>
+                <li><b> +</b> Nur einmal einen Request an den Server</li>
+				<li><b> +</b> Nur einmal das rendern der Tabelle</li>
+				<li><b> -</b> alte Daten</li>
+				<li><b> -</b> alle Daten auf einmal</li>
+				<li><b> -</b> F&uuml;r aktuelle Daten muss Seite refreshed werden</li>
+            </ul>
+        </section>
+		<section>
+			<h2>Bei jedem Klick auf den Toggle-Button</h2>
+			<ul>
+				<li><b> +</b> aktuelle Daten</li>
+				<li><b> +</b> nur dann Daten nachladen wenn sie ben&ouml;tigt werden.</li>
+				<li><b> -</b> Mehrere Requests an den Server</li>
+				<li><b> -</b> Mehrfaches rendern der Tabelle</li>
+			</ul>
+		</section>
+		<section>
+			<h2>Die L&ouml;sung: it depends!!!</h2>
+			<ul>
+				<li>Rechenleistung des Browser</li>
+				<li>Wie aktuell m&uuml;ssen die Daten sein?</li>
+				<li>Mit welcher Frequenz ist eine Datenaktualisierung auf serverseite zu rechnen?</li>
+			</ul>
+		</section>
+    </section>
+        <section>
+			<section>
+				<h2>Projektstruktur</h2>
+	        </section>
+			<section>
+				<ul>
+					<li>Versionverwaltungssystem richtig nutzen: .gitignore</li>
+					<li>Codeformatierung?</li>
+					<li>Config Dateien?</li>
+				</ul>
+	        </section>
+			<section>
+				<h2>Gitignore</h2>
+				<ul>
+					<li>Ein File im root-Verzeichnis des Projektes: .gitignore</li>
+					<li>Die nach einer Regel angegebenen Files/ Ordner werden von Git ignoriert</li>
+				</ul>
+				<pre class="bash"><code>
+# alles hinter einer Raute (#) gilt als Kommentar
+*.php      # alle PHP-Dateien werden ignoriert
+!index.php # Tracke PHP-Datei, selbst wenn alle PHP-Dateien ignoriert werden
+/TODO      # ignoriere die TODO-Datei, nicht den TODO-Ordner
+bin/       # ignoriere alle Dateien im bin-Ordner
+directory  # ignoriere den kompletten Ordner directory
+				</code></pre>
+			</section>
+			<section>
+				<h2>Codeformatierung?</h2>
+				<ul>
+					<li>Eslint</li>
+					<li>Jshint</li>
+					<li>Editorconfig</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Codeformatierung?</h2>
+				<ul>
+					<li>Einr&uuml;ckung</li>
+					<li>Tabs oder whitespace?</li>
+					<li>Wieviele Whitespaces ergeben einen Tab?</li>
+					<li>Whitespaces zwischen Operanden</li>
+					<li>Leerzeile vor return, vor if-Bedingung...</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Eslint</h2>
+				<ul>
+					<li>.eslintrc File im Root-Verzeichnis</li>
+					<li>Komplettes Config-Rules-Set: https://gist.github.com/cletusw/e01a85e399ab563b1236</li>
+					<li>Muss als Plugin in der IDE Installiert werden. (Manche IDEs weigern sich)</li>
+					<li>Angaben ob Warning oder als Error</li>
+				</ul>
+			</section>
+			<section>
+				<h2>EditorConfig-Plugin (beliebt in Sublime)</h2>
+				<span>als .editorconfig - File im root Verzeichnis</span>
+				<pre class="bash"><code>
+#http://EditorConfig.org
+
+# Set default charset
+[*.{js}]
+charset = utf-8
+
+# 4 space indentation
+[*.js]
+indent_style = tab
+indent_size = 4
+
+# Matches the exact files either package.json
+[{package.jsonl}]
+indent_style = space
+indent_size = 4
+				</code></pre>
+			</section>
+        </section>
+		<section>
+			<section>
+				<h2>Configs???</h2>
+			</section>
+			<section>
+				<h2>Gut?</h2>
+				<pre class="javascript"><code>xhr.open('GET', 'http://127.0.0.1/api/players');</code></pre>
+			</section>
+		<section>
+			<h2>Eigene Datei: config.js</h2>
+			<ul>
+				<li>Eine einzige Stelle an der man die Domain anpassen muss</li>
+				<li><pre class="javascript"><code>const IP = config.ip</code></pre></li>
+				<li><pre class="javascript"><code>const PORT = config.port</code></pre></li>
+				<li><pre class="javascript"><code>const GET_URL = config.get_url</code></pre></li>
+				<li><pre class="javascript"><code>xhr.open('GET', GET_URL);</code></pre></li>
+			</ul>
+			</section>
+		</section>
+		<section>
+			<section>
+				<h2>Best practices</h2>
+			</section>
+		<section>
+			<h2>Code-Style</h2>
+			<ul>
+				<li>Vermischt nicht deutsch mit englisch!</li>
+				<li>Vermischt nicht DOM 0 mit DOM 2 oder 3 oder 4</li>
+				<li>Vermischt nicht XHR(1) mit XHR2</li>
+				<li>Achtet auf eure Methoden und Variablen Benennung</li>
+				<li>Findet euren eigenen Coding-Style</li>
+			</ul>
+			</section>
+			<section>
+				<h2>== oder === das ist hier die Frage</h2>
+			</section>
+		</section>
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+</script>
+
+</body>
+</html>

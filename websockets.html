@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Webanwendungen - Martina Kraus</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Martina Kraus">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+	<style>
+		.reveal pre {
+				font-size: 0.8em;
+				width: 100%;
+
+		}
+		.reveal pre code {
+				max-height: 600px;
+
+		}
+		.reveal img, .reveal video, .reveal iframe {
+		    max-width: 100%;
+		     max-height: 100%;
+		}
+
+	</style>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+    <section>
+        <h1>WebSockets</h1>
+    </section>
+
+    <section>
+        <h2>Inhalt</h2>
+        <ul>
+            <li>Einf&uuml;hrung</li>
+            <li>Funktionsweise</li>
+            <li>WebSockets API</li>
+            <li>Socket.IO</li>
+        </ul>
+    </section>
+    <section>
+        <section>
+            <h1>Einf&uuml;hrung</h1>
+			<h2>Wann und wie oft lade ich meine Daten???</h2>
+        </section>
+         <section>
+            <h2>Reminder: Polling (2000)</h2>
+			<img src="assets/polling.png">
+        </section>
+		<section>
+		   <h2>Reminder: Long-Polling/ Comet (2006)</h2>
+		   <img src="assets/longPolling.png">
+	   </section>
+	   <section>
+		  <h2>Reminder: WebSockets (2011)</h2>
+	   	  <img src="assets/websockets.png">
+	  </section>
+	  <section>
+		  <h2>WebSockets</h2>
+		  <ul>
+			  <li>Technologie f&uuml;r eine bidirektionale Datenverbindung</li>
+			  <li>&Uuml;ber einen einzigen TCP Socket</li>
+			  <li>Implementiert die Push-Technologie</li>
+			  <li>Server und Client sind permanent miteinander verbunden</li>
+			  <li>Erm&ouml;glicht Echtzeit Daten-Streaming</li>
+			  <li>Ein komplett eigenes Protokoll (websocket-protocoll) (<b>KEIN</b> HTTP)</li>
+		  </ul>
+	  </section>
+    </section>
+	<section>
+		<section>
+			<h1>Funktionsweise</h1>
+		</section>
+		 <section>
+			<h2>Handshake</h2>
+			<ol>
+				<li>Client sendet Request an den Server (websocket-connect-Request)</li>
+				<li>Server antwortet, ob er damit einverstanden ist, wenn nicht, wird die Verbindung beendet.</li>
+				<li>Ansonsten switchen beide sofort (&uuml;ber denselben Port) auf das websocekt-protocol</li>
+				<li>Auf Serverseite nennt man es 'upgrade' von http-protocol auf das websocekt-protocol</li>
+			</ol>
+		</section>
+		<section>
+		   <h2>Handshake-Requesteader</h2>
+		   <span>GET <b>ws://</b>websocket.example</span>
+		   <pre class="bash"><code>	GET /chat HTTP/1.1
+	Host: ws://server.codekittey.com
+	Upgrade: WebSocket
+	Connection: Upgrade
+	Origin: http://codekittey.com
+		   </code></pre>
+	   </section>
+	   <section>
+		  <h2>Handshake-Requesteader</h2>
+		  <pre class="bash"><code>  HTTP/1.1 101 Switching Protocols
+  Upgrade: WebSocket
+  Connection: Upgrade
+</code></pre>
+	  </section>
+	  <section>
+		  <h2>Browsersupport</h2>
+		  <img src="assets/browserSupport.png">
+	</section>
+	<section>
+	   <h2>Immer auf WebSockets &uuml;berpr&uuml;fen!!! (clientseitig)</h2>
+	   <pre class="javascript"><code> if ('WebSocket' in window){
+   /* WebSocket is supported.*/
+} else {
+   /*WebSockets are not supported.
+   Try a fallback method like long-polling etc*/
+}
+</code></pre>
+   </section>
+	</section>
+<section>
+	 <section>
+		 <h1>WebSockets-API (clientseitig)</h1>
+	 </section>
+	 <section>
+		<h2>Initialisierung (clientseitig)</h2>
+		<pre class="javascript"><code>//Einen Websocket initialisieren
+let connection =
+  new WebSocket('ws://example.org:1337');
+
+//Einen verschl&uuml;sselten Websocket initialisieren
+let connection =
+  new WebSocket('wss://example.org:1337');
+  </code></pre>
+	 </section>
+	 <section>
+		<h3>WebSocket Events</h3>
+		 <table>
+<tr>
+<th width="10%">Event</th>
+<th width="25%">Event Handler</th>
+<th>Description</th></tr>
+<tr>
+<td>open</td>
+<td>Socket.onopen</td>
+<td>This event occurs when socket connection is established.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>Socket.onmessage</td>
+<td>This event occurs when client receives data from server.</td>
+</tr>
+<tr>
+<td>error</td>
+<td>Socket.onerror</td>
+<td>This event occurs when there is any error in communication.</td>
+</tr>
+<tr>
+<td>close</td>
+<td>Socket.onclose</td>
+<td>This event occurs when connection is closed.</td>
+</tr>
+</table>
+	 </section>
+	 <section>
+		<h2>Beispiel (clientseitig)</h2>
+		<pre class="javascript"><code>	//onmessage
+	socket.onmessage = function(message){
+	let server_message = message.data;
+	console.log(server_message);
+	}
+
+	//onopen
+	socket.onopen = function(){
+	console.log('Awesome Connection open!');
+	}</code></pre>
+	 </section>
+	 <section>
+		 <h3>WebSocket Methods</h3>
+		 <table>
+			<tr>
+			<th>Method</th>
+			<th>Description</th>
+			</tr>
+			<tr>
+			<td>Socket.send()</td>
+			<td><p>The send(data) method transmits data using the connection.</p></td>
+			</tr>
+			<tr>
+			<td>Socket.close()</td>
+			<td><p>The close() method would be used to terminate any existing connection.</p></td>
+			</tr>
+		</table>
+	 </section>
+	 <section>
+		<h2>Beispiel (clientseitig)</h2>
+		<pre class="javascript"><code>	//send data to server
+	socket.send('Hey server, whats up?');</code></pre>
+	 </section>
+	 <section>
+		<h2>Weiterf&uuml;hrende Links</h2>
+		<ul>
+			<li>The WebSocket API -- https://www.w3.org/TR/2011/WD-websockets-20110419/#the-websocket-interface</li>
+			<li>MDN WebSocket -- https://developer.mozilla.org/en-US/docs/Web/API/WebSocket</li>
+			<li>Writing WebSocket client applications -- https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_client_applications</li>
+		</ul>
+	</section>
+</section>
+<section>
+	<section>
+		<h1>Und Serverseitig???</h1>
+	</section>
+	<section>
+	   <h2>Serverseitige Implementierungen</h2>
+	   <ul>
+		   <li><b>NodeJS</b> -- Socket.IO, WebSocket-Node, ws</li>
+		   <li><b>Java</b> -- Jetty</li>
+		   <li><b>Ruby</b> -- EventMachine</li>
+		   <li><b>Python</b> -- pywebsocket, Tornado</li>
+		   <li><b>C++</b> -- libwebsockets</li>
+		   <li><b>.NET</b> -- SuperWebSocket</li>
+	   </ul>
+   </section>
+   <section>
+	  <h2>Socket.IO</h2>
+	  <ul>
+		  <li>Entstand 2012</li>
+		  <li>Stable release: v1.4.5</li>
+		  <li>installation via npm: (<i>npm install socket.io --save)</i></li>
+		  <li>Kommt mit einer client- und serverseitigen Library</li>
+		  <li>automatische Fallbacks falls WebSockets nicht supported werden</li>
+		  <li>Umfassende Dokumentation (http://socket.io/docs/) und riesige Community (Slack-Channel)</li>
+	  </ul>
+	 </section>
+	 <section>
+	   <h2>Socket.IO (einbindung clientseitig)</h2>
+	<pre class="html"><code>&lt;!--via CDN (Content Delivery Network)--&gt;
+&lt;script src=&quot;https://cdn.socket.io/socket.io-1.4.5.js&quot;/&gt;
+
+&lt;!--vom eigenen Server--&gt;
+&lt;script src=&quot;http://your-path-to/socket.io.js&quot;/&gt;
+</code></pre>
+	  </section>
+	  <section>
+		 <h2>Initialisierung Socket.IO (clientseitig)</h2>
+		 <pre class="javascript"><code> //global websocket-object io
+let socket = io.connect('http://codekittey/123');
+	socket.on('data', function (data) {
+	console.log(data);
+});
+	 </code></pre>
+	  </section>
+	  <section>
+	  <h2>Socket.IO clientseitig</h2>
+		<span>Keine manuelle &Uuml;berpr&uuml;fung auf Support</span><br>
+		<span>Wenn Browser keine WebSockets kennt (Fallbacks):</span><br>
+		<br>
+	  <ol>
+		  <li>FlashSockets</li>
+		  <li>HTML-File</li>
+		  <li>xhr-polling</li>
+		  <li>jsonp-polling</li>
+	  </ol>
+	 </section>
+	 <section>
+		<h2>Socket.IO (serverseitig)</h2>
+		<pre class="javascript"><code>//app ist unsere exoress Instanz
+  var io = require('socket.io')(app);
+
+  io.on('connection', function (socket) {
+    //handle connected socket (save it somewhere)
+    //sende das Event 'data' mit dem JSON an den Socket
+    socket.emit('data', { data: '11' });
+    //hoere auf das Event 'data' (custom Events)
+    socket.on('data', function (data) {
+		//broadcast to every socket
+  });
+});
+	</code></pre>
+	 </section>
+	 <section>
+	 <h2>Broadcasting messages (serverseitig)</h2>
+	 <ul>
+		 <li>Ein Broadcast ist ein pushen von Daten an alle verbundenen Sockets</li>
+	 </ul>
+	 <pre class="javascript"><code>
+	 io.on('connection', function (socket) {
+	   socket.broadcast.emit('woop woop');
+	 });
+ </code></pre>
+	</section>
+</section>
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+</script>
+
+</body>
+</html>

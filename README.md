@@ -1,11 +1,11 @@
-# Webanwendungen SS16
+# Web-Technologien
 
 Folien der Vorlesung 
 
 # Organisation
 
 Alle organisatorischen Aufgaben, Probleme und Fragen finden
-in dem Repository [https://github.com/WAWSS16/Organization](https://github.com/WAWSS16/Organization)
+in dem Repository [https://github.com/WAW-SS18/Organization](https://github.com/WAW-SS18/Organization)
 statt.
 
 # FAQ
